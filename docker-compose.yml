@@ -1,12 +1,12 @@
 # DATA Volumes container
 data:
-    container_name: php_trello_burndown_data
+    container_name: ptb_data
     extends:
         file: common-services.yml
         service: data
 # CLI
 cli:
-    container_name: php_trello_brundown_cli
+    container_name: ptb_cli
     extends:
         file: common-services.yml
         service: cli
@@ -16,7 +16,7 @@ cli:
         - data
 # PHP FPM
 phpfpm:
-    container_name: php_trello_burndown_phpfpm
+    container_name: ptb_phpfpm
     extends:
         file: common-services.yml
         service: phpfpm
@@ -26,7 +26,7 @@ phpfpm:
     #     - "blackfire:blackfire"
 
 bfcli:
-  # container_name: php_trello_burndown_bfcli
+  # container_name: ptb_bfcli
   image: blackfire/blackfire
   command: /bin/sh
   # stdin_open: true
@@ -46,7 +46,7 @@ blackfire:
     - BLACKFIRE_SERVER_TOKEN
 
 web:
-    container_name: php_trello_burndown_web
+    container_name: ptb_web
     extends:
         file: common-services.yml
         service: nginx

@@ -6,4 +6,4 @@ else
     cmds="$@"
 fi
 
-docker exec -it php_trello_burndown_cli $cmds
+docker exec -it ptb_cli $cmds
